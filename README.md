@@ -17,12 +17,12 @@ Proyek ini menganalisis sentimen ulasan pengguna aplikasi Gojek menggunakan data
 ## 📂 Struktur Repository
 ```
 Analisis-Sentiment-Gojek/
-├── README.md # Dokumentasi proyek
-├── Requirements.txt # Daftar library Python
-├── Scrapping_Data.ipynb # Notebook untuk scraping ulasan Gojek
-├── Sentiment_Analysis_Gojek.ipynb # Notebook analisis dan modeling
-├── gojek_reviews.csv # Dataset hasil scraping
-└──  LICENSE # Lisensi proyek (MIT)
+├── README.md                         # Dokumentasi proyek
+├── Requirements.txt                  # Daftar library Python
+├── Scrapping_Data.ipynb              # Notebook untuk scraping ulasan Gojek
+├── Sentiment_Analysis_Gojek.ipynb    # Notebook analisis dan modeling
+├── gojek_reviews.csv                 # Dataset hasil scraping
+└──  LICENSE                          # Lisensi proyek (MIT)
 ```
 
 ---
