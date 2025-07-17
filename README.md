@@ -16,7 +16,7 @@ Proyek ini menganalisis sentimen ulasan pengguna aplikasi Gojek menggunakan data
 
 ## 📂 Struktur Repository
 ```
-Analisis-Sentiment-Gojek/
+analisis-sentiment-gojek/
 ├── README.md                         # Dokumentasi proyek
 ├── LICENSE                           # Lisensi proyek (MIT)
 ├── analisis_sentimen.ipynb           # Notebook analisis dan modeling
