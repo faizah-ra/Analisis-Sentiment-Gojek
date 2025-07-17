@@ -3,6 +3,27 @@
 
 Proyek ini menganalisis sentimen ulasan pengguna aplikasi Gojek menggunakan data hasil *scraping* langsung dari Google Play Store. Sistem ini mengimplementasikan berbagai algoritma Machine Learning dan Deep Learning untuk memahami opini pelanggan, mendeteksi masalah layanan, serta memberikan insight strategis bagi pengambilan keputusan produk.
 
+Sistem ini dirancang untuk **mengklasifikasikan ulasan pelanggan ke dalam tiga kategori sentimen utama**, yaitu: **Negatif**, **Netral**, dan **Positif**. Proses klasifikasi ini bertujuan untuk:
+
+- **Mengidentifikasi keluhan pelanggan** secara otomatis,
+- **Mendukung pengambilan keputusan berbasis data** oleh tim produk dan layanan,
+- **Meningkatkan kualitas pengalaman pengguna (User Experience)** dengan memberikan respon proaktif terhadap tren sentimen.
+
+Dengan pendekatan ini, perusahaan dapat mengetahui area layanan mana yang mendapat respon buruk, memahami alasan di balik penurunan rating aplikasi, dan mengambil langkah korektif dengan lebih cepat. Klasifikasi tiga arah ini juga berguna untuk menyaring *feedback netral* sebagai dasar evaluasi fitur baru atau kebijakan yang masih perlu pengembangan.
+
+
+---
+## 💼 Rancangan Bisnis
+
+Dalam era ekonomi digital, ulasan pelanggan merupakan sumber insight yang sangat penting dalam evaluasi performa layanan. Dengan ribuan ulasan yang masuk setiap minggu, tim produk kesulitan menganalisis data secara manual.
+
+Proyek ini hadir sebagai solusi **analitik otomatis** untuk:
+- **Mendeteksi tren sentimen pelanggan** secara real-time
+- **Mengevaluasi kepuasan pengguna** berdasarkan fitur dan layanan tertentu
+- **Memberikan umpan balik strategis** bagi pengembangan produk dan peningkatan pelayanan
+
+Sistem ini dapat diintegrasikan ke dalam *dashboard analytics* atau digunakan untuk *alert system* apabila sentimen negatif meningkat tajam dalam waktu tertentu.
+
 ---
 
 ## 🎯 Tujuan Proyek
@@ -38,7 +59,7 @@ analisis-sentiment-gojek/
 
 ---
 
-## 🔍 Ringkasan Alur Sistem
+## 🔍 Alur Sistem
 
 1. **Scraping Data**  
    Mengambil ulasan pengguna aplikasi Gojek dari Google Play Store menggunakan `google-play-scraper`.
@@ -67,6 +88,37 @@ analisis-sentiment-gojek/
 | SVM (TF-IDF)  | >85%    | Stabil & akurat untuk teks | Tidak memahami konteks kalimat       |
 | LSTM          | ~80-85% | Pahami urutan & konteks    | Butuh tuning & data lebih besar      |
 
+
+## 💡 Insight dan Rekomendasi
+
+- Model LSTM cukup menjanjikan namun memerlukan jumlah data yang lebih besar serta tuning lanjutan.
+- Data ulasan tidak seimbang → disarankan menggunakan teknik oversampling/undersampling.
+- Untuk hasil yang lebih kontekstual, pertimbangkan penggunaan *word embeddings* seperti BERT atau IndoBERT.
+
+---
+## 📊 Implikasi Bisnis:
+- Sistem ini dapat digunakan sebagai komponen utama dalam dashboard monitoring sentimen pelanggan, mempermudah deteksi dini atas tren negatif yang muncul di Google Play Store atau platform ulasan lainnya.
+- Insight seperti "model cenderung gagal mengenali ulasan positif" memberi sinyal kepada tim bisnis bahwa pengukuran kepuasan pelanggan mungkin bias jika hanya mengandalkan satu model—sehingga memerlukan validasi silang dan intervensi data engineer.
+- Rekomendasi selanjutnya adalah mengembangkan sistem yang mampu:
+      - Mengelompokkan keluhan berdasar fitur aplikasi (layanan pengantaran, pembayaran, dsb.)
+      - Mengukur perubahan sentimen pasca update aplikasi
+      - Memberikan alert otomatis jika proporsi sentimen negatif meningkat signifikan
+
+Dengan penerapan sistem seperti ini, tim produk dan CX dapat lebih cepat merespons masalah, meningkatkan kepuasan pelanggan, serta mempertahankan rating aplikasi di tengah persaingan platform digital.
+---
+
+## 📌 Cara Menjalankan
+
+1. Clone repositori ini
+2. Install dependency dari `Requirements.txt`:
+```bash
+pip install -r Requirements.txt
+```
+3. Jalankan notebook secara berurutan:
+  - Scrapping_Data.ipynb untuk mengambil data
+  - Sentiment_Analysis_Gojek.ipynb untuk analisis & modeling
+
+---
 ---
 
 ## ✨ Catatan Reviewer Dicoding
@@ -88,28 +140,6 @@ Sebagai System Analyst, tanggung jawab utama dalam proyek ini meliputi:
 - **Evaluasi Sistem & Insight**: Memberikan insight strategis berdasarkan hasil model dan evaluasi data.
 
 ---
-
-## 💡 Insight dan Rekomendasi
-
-- Model LSTM cukup menjanjikan namun memerlukan jumlah data yang lebih besar serta tuning lanjutan.
-- Data ulasan tidak seimbang → disarankan menggunakan teknik oversampling/undersampling.
-- Untuk hasil yang lebih kontekstual, pertimbangkan penggunaan *word embeddings* seperti BERT atau IndoBERT.
-
----
-
-## 📌 Cara Menjalankan
-
-1. Clone repositori ini
-2. Install dependency dari `Requirements.txt`:
-```bash
-pip install -r Requirements.txt
-```
-3. Jalankan notebook secara berurutan:
-  - Scrapping_Data.ipynb untuk mengambil data
-  - Sentiment_Analysis_Gojek.ipynb untuk analisis & modeling
-
----
-
 ## 👩‍💻 Tentang Pengembang
 
 **Faizah Rizki Auliawati**  
